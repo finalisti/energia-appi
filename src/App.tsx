@@ -1,5 +1,7 @@
 import './App.css';
 import EnergyOverview from './EnergyOverview';
+import EnergyBarChart from './EnergyBarChart';
+import EnergyPieChart from './EnergyPieChart';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         </h1>
       </header>
       <EnergyOverview />
+      <EnergyBarChart />
+      <EnergyPieChart />
     </div>
   );
 }
