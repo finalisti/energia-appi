@@ -1,35 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import EnergyOverview from './EnergyOverview';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div style={{ minHeight: '100vh', background: '#f7fafc' }}>
+      <header style={{ textAlign: 'center', marginTop: 40, marginBottom: 24 }}>
+        <h1 style={{
+          fontSize: 44,
+          fontWeight: 800,
+          letterSpacing: 1,
+          color: '#234',
+          textShadow: '0 2px 12px #43e97b22',
+        }}>
+          Energia Appi
+        </h1>
+      </header>
+      <EnergyOverview />
+    </div>
+  );
 }
 
-export default App
+export default App;
