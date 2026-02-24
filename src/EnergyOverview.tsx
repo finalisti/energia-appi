@@ -1,8 +1,10 @@
 
+import { useState } from 'react';
 const mockConsumption = 3200; // kWh per year (example)
 const mockCO2 = 900; // kg CO2 per year (example)
 
 export default function EnergyOverview() {
+  const [count, setCount] = useState(0);
   return (
     <div
       style={{
@@ -38,6 +40,28 @@ export default function EnergyOverview() {
         >
           {mockConsumption} <span style={{ fontSize: 20, fontWeight: 400 }}>kWh</span>
           <span style={{ fontSize: 16, fontWeight: 400, marginTop: 2 }}>vuodessa</span>
+        </div>
+      </div>
+      <div style={{ margin: '18px 0 24px 0' }}>
+        <button
+          style={{
+            padding: '10px 28px',
+            fontSize: 18,
+            fontWeight: 600,
+            borderRadius: 8,
+            border: 'none',
+            background: 'linear-gradient(90deg, #43e97b 0%, #38f9d7 100%)',
+            color: '#fff',
+            boxShadow: '0 2px 8px #43e97b33',
+            cursor: 'pointer',
+            transition: 'background 0.2s',
+          }}
+          onClick={() => setCount(count + 1)}
+        >
+              Lisää kulutusta
+        </button>
+        <div style={{ fontSize: 22, fontWeight: 700, color: '#234', marginTop: 10 }}>
+          Nykyinen määrä: {count}
         </div>
       </div>
       <p style={{ fontSize: 18, color: "#234", margin: "0 0 10px 0" }}>
