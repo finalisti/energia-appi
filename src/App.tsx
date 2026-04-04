@@ -1,27 +1,29 @@
-import './App.css';
-import EnergyOverview from './EnergyOverview';
-import EnergyBarChart from './EnergyBarChart';
-import EnergyPieChart from './EnergyPieChart';
 
+
+import { useState } from 'react';
+import AuthForm from './AuthForm';
+
+import Dashboard from './Dashboard';
+import './App.css';
+
+
+
+
+// تطبيق الطاقة - المكون الرئيسي
 function App() {
+  const [user, setUser] = useState<string | null>(null);
+  const handleLogout = () => setUser(null);
   return (
     <div style={{ minHeight: '100vh', background: '#f7fafc' }}>
-      <header style={{ textAlign: 'center', marginTop: 40, marginBottom: 24 }}>
-        <h1 style={{
-          fontSize: 44,
-          fontWeight: 800,
-          letterSpacing: 1,
-          color: '#234',
-          textShadow: '0 2px 12px #43e97b22',
-        }}>
-          Energia Appi
-        </h1>
-      </header>
-      <EnergyOverview />
-      <EnergyBarChart />
-      <EnergyPieChart />
+      {/* شاشة تسجيل الدخول أو لوحة التحكم */}
+      {!user ? (
+        <AuthForm onAuth={setUser} />
+      ) : (
+        <Dashboard username={user} onLogout={handleLogout} />
+      )}
     </div>
   );
 }
+
 
 export default App;
