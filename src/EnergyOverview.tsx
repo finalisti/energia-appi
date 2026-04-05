@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { Bar, Line } from 'react-chartjs-2';
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,9 +12,10 @@ import {
   Title,
   Tooltip,
   Legend,
+  Filler,
 } from 'chart.js';
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, PointElement, LineElement, Title, Tooltip, Legend);
+ChartJS.register(CategoryScale, LinearScale, BarElement, PointElement, LineElement, Title, Tooltip, Legend, Filler);
 
 const mockConsumption = 3200; // kWh per year (example)
 const mockCO2 = 900; // kg CO2 per year (example)
